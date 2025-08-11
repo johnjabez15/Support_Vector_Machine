@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Purchase Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Purchase Prediction</h1>
+        <form action="/predict" method="post">
+            <label>Age:</label>
+            <input type="number" name="age" min="18" max="90" required>
+
+            <label>Time on Site (minutes):</label>
+            <input type="number" name="time_on_site" step="0.1" min="0" required>
+
+            <label>Pages Viewed:</label>
+            <input type="number" name="pages_viewed" min="0" required>
+
+            <label>Added to Cart:</label>
+            <select name="added_to_cart" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <button type="submit">Predict Purchase</button>
+        </form>
+    </div>
+</body>
+</html>
